@@ -472,3 +472,82 @@ The Ternary Operator
 //     if (typeof john[i] !== 'string') continue;
 //     console.log(john[i]);
 // }
+
+// function calcTip(bill){
+  
+//     let tips = [];
+//     let paid = [];
+
+//       let percentage;
+//       if(bill < 50){
+//         percentage = .2;
+//       } else if (bill < 50 || bill < 200){
+//         percentage = .15;   
+//       } else {
+//         percentage = .10;
+//       }
+//         return percentage * bill;
+
+//     }
+  
+//   console.log(calcTip(124))
+let john = {
+  bills: [124,48,268,180,42],
+  tips: [],
+  totalAmount: [],
+  calcTip: function(){
+    
+    for(let i = 0; i < this.bills.length; i++){
+      let percentage;
+      if(this.bills[i] < 50){
+        percentage = .2;
+        
+      } else if (this.bills[i] < 50 || this.bills[i] < 200){
+        percentage = .15;
+        
+      } else {
+        percentage = .10;
+     
+      }
+       this.tips.push(percentage * this.bills[i]);
+       this.totalAmount.push(this.tips[i] + this.bills[i]);
+    }
+  }
+}
+
+
+
+john.calcTip();
+console.log(john);
+
+
+// let john = {
+//   bills: [124,48,268,180,42],
+//   tips: [],
+//   totalAmount: [],
+//   calcTip: function(){
+    
+//     for(let i = 0; i < this.bills.length; i++){
+//       let percentage;
+//       if(this.bills[i] < 50){
+//         percentage = .2;
+        
+//       } else if (this.bills[i] < 50 || this.bills[i] < 200){
+//         percentage = .15;
+        
+//       } else {
+//         percentage = .10;
+     
+//       }
+//        this.tips.push(percentage * this.bills[i]);
+//        this.totalAmount.push(this.tips[i] + this.bills[i]);
+//     }
+//   }
+// }
+
+
+
+// john.calcTip(john.bills);
+// console.log(john.tips);
+// console.log(john.totalAmount);
+
