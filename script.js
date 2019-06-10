@@ -491,36 +491,6 @@ The Ternary Operator
 //     }
   
 //   console.log(calcTip(124))
-let john = {
-  bills: [124,48,268,180,42],
-  tips: [],
-  totalAmount: [],
-  calcTip: function(){
-    
-    for(let i = 0; i < this.bills.length; i++){
-      let percentage;
-      if(this.bills[i] < 50){
-        percentage = .2;
-        
-      } else if (this.bills[i] < 50 || this.bills[i] < 200){
-        percentage = .15;
-        
-      } else {
-        percentage = .10;
-     
-      }
-       this.tips.push(percentage * this.bills[i]);
-       this.totalAmount.push(this.tips[i] + this.bills[i]);
-    }
-  }
-}
-
-
-
-john.calcTip();
-console.log(john);
-
-
 // let john = {
 //   bills: [124,48,268,180,42],
 //   tips: [],
@@ -547,7 +517,98 @@ console.log(john);
 
 
 
-// john.calcTip(john.bills);
-// console.log(john.tips);
-// console.log(john.totalAmount);
+// john.calcTip();
+// console.log(john);
 
+
+let john = {
+  bills: [124,48,268,180,42],
+  calcTip: function(){
+    this.tips = [];
+    this.totalAmount= [];
+    
+    for(let i = 0; i < this.bills.length; i++){
+      let percentage;
+      let bill = this.bills[i];
+      if(bill < 50){
+        percentage = .2;
+        
+      } else if (bill < 50 || bill < 200){
+        percentage = .15;
+        
+      } else {
+        percentage = .10;
+     
+      }
+       this.tips[i] = bill * percentage;
+       this.totalAmount[i] = bill + bill * percentage;
+    }
+  }
+}
+
+
+
+
+let mark = {
+  bills: [77,5,110,45],
+  calcTip: function(){
+    this.tips = [];
+    this.totalAmount= [];
+    
+    for(let i = 0; i < this.bills.length; i++){
+      let percentage;
+      let bill = this.bills[i];
+      if(bill < 100){
+        percentage = .2;
+        
+      } else if (bill < 100 || bill < 300){
+        percentage = .10;
+        
+      } else {
+        percentage = .25;
+        
+      }
+       this.tips[i] = bill * percentage;
+       this.totalAmount[i] = bill + bill * percentage;
+      }
+    }
+  }
+  
+  
+  
+  
+  
+  function average(){
+    for(var i = 0; i < tips.length; i++) {
+      
+    }
+  }
+  
+  function calcAverage(tips) {
+    var sum = 0;
+    for (var i = 0; i < tips.length; i++) {
+      sum = sum + tips[i];
+    }
+    return sum / tips.length;
+  }
+  
+  
+  // [2, 6, 4] -> 0 / 2 / 8 / 12
+
+
+
+
+john.calcTip();
+mark.calcTip();
+
+john.average = calcAverage(john.tips);
+mark.average = calcAverage(mark.tips);
+console.log(john, mark);
+
+if (john.average > mark.average) {
+  console.log("john" + "family pays higher tips with an average of " + john.average);
+} else if (mark.average > john.average) {
+  console.log("Mark" + "family pays higher tips with an average of " + mark.average);
+} else {
+  console.log(" both family's pay the same amount in tips")
+}
