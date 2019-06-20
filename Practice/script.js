@@ -800,3 +800,24 @@ console.log(rate);
 
 // Functions returning functions 
 
+function interviewQuestions(job){
+  if( job === 'teacher') {
+    return function(name) {
+      console.log(name + ', why do you want to be a teacher');
+    }
+  } else if (job === 'developer'){
+    return function(name){
+      console.log(name + ', what is a object?');
+    }
+    } else {
+      return function(name){
+        console.log( 'Hello ' + name + ', what do you do?');''
+      }
+    }
+  }
+
+
+  let teachQuestion = interviewQuestion('teacher');
+
+  teach
+  var designerQuestion = interviewQuestion('designer');
