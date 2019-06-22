@@ -760,64 +760,152 @@ The Ternary Operator
 // console.log(age);
 // console.log(obj.city);
 
-let years = [1994,1990,2000,1998,1999];
+// let years = [1994,1990,2000,1998,1999];
 
-function arrCalc(arr,fn){
-    arrResults = [];
+// function arrCalc(arr,fn){
+//     arrResults = [];
 
-    for(var i = 0; i < arr.length; i++){
-        arrResults.push(fn(arr[i]));
-    }
+//     for(var i = 0; i < arr.length; i++){
+//         arrResults.push(fn(arr[i]));
+//     }
 
-    return arrResults;
-}
+//     return arrResults;
+// }
 
-function calcAge(year){
-     return 2019 - year;
-}
+// function calcAge(year){
+//      return 2019 - year;
+// }
 
-function isFullAge(el) {
-    return el >= 18;
-}
+// function isFullAge(el) {
+//     return el >= 18;
+// }
 
-function maxHeartRate(el){
-    if( el >= 18 && el <= 81) {
-        return Math.round(206.9 - (0.67 * el));
-    } else {
-        return -1;
-    }
-}
+// function maxHeartRate(el){
+//     if( el >= 18 && el <= 81) {
+//         return Math.round(206.9 - (0.67 * el));
+//     } else {
+//         return -1;
+//     }
+// }
 
-let ages = arrCalc(years, calcAge);
+// let ages = arrCalc(years, calcAge);
 
-let fullages = arrCalc(ages,isFullAge);
+// let fullages = arrCalc(ages,isFullAge);
 
-let rate = arrCalc(ages,maxHeartRate);
-console.log(ages);
-console.log(fullages);
-console.log(rate);
+// let rate = arrCalc(ages,maxHeartRate);
+// console.log(ages);
+// console.log(fullages);
+// console.log(rate);
 
 
 // Functions returning functions 
 
-function interviewQuestions(job){
-  if( job === 'teacher') {
-    return function(name) {
-      console.log(name + ', why do you want to be a teacher');
-    }
-  } else if (job === 'developer'){
-    return function(name){
-      console.log(name + ', what is a object?');
-    }
-    } else {
+// function interviewQuestions(job){
+//   if( job === 'teacher') {
+//     return function(name) {
+//       console.log(name + ', why do you want to be a teacher');
+//     }
+//   } else if (job === 'developer'){
+//     return function(name){
+//       console.log(name + ', what is a object?');
+//     }
+//     } else {
+//       return function(name){
+//         console.log( 'Hello ' + name + ', what do you do?');''
+//       }
+//     }
+//   }
+
+
+//   let teacherQuestion = interviewQuestions('teacher');
+
+//   let designerQuestion = interviewQuestions('designer');
+
+//   teacherQuestion('john');
+//   designerQuestion('John');
+
+//   interviewQuestions('teacher')('Tim');
+
+//   // IIFE's 
+
+  // (function (){
+  //   let score = Math.random() * 10;
+  //   console.log(score >= 5);
+  // })();
+
+  // // console.log(score);
+
+  // (function (goodLuck) {
+  //   let score = Math.random() * 10;
+  //   console.log(score >= 5 - goodLuck);
+  // })(5);
+
+
+
+  // Closures 
+
+//   function retirement(reitrementAge) {
+//     let a = ' years left until retirement';
+//     return function(yearOfBirth) {
+//       let age = 2019 - yearOfBirth;
+//       console.log((reitrementAge - age) + a);
+//     }
+//   }
+
+//   let retirementUS = retirement(66);
+//   retirementUS(1994);
+
+//   // Functions returning functions 
+
+// function interviewQuestions(job){
+//   if( job === 'teacher') {
+//     return function(name) {
+//       console.log(name + ', why do you want to be a teacher');
+//     }
+//   } else if (job === 'developer'){
+//     return function(name){
+//       console.log(name + ', what is a object?');
+//     }
+//     } else {
+//       return function(name){
+//         console.log( 'Hello ' + name + ', what do you do?');''
+//       }
+//     }
+//   }
+
+
+//   let teacherQuestion = interviewQuestions('teacher');
+
+//   let designerQuestion = interviewQuestions('designer');
+
+//   teacherQuestion('john');
+//   designerQuestion('John');
+
+//   interviewQuestions('teacher')('Tim');
+
+
+ // *******************
+
+  function interviewQuestions(job){
+    if( job === 'teacher') {
+      return function(name) {
+        console.log(name + ', why do you want to be a' + job);
+      }
+    } else if (job === 'developer'){
       return function(name){
-        console.log( 'Hello ' + name + ', what do you do?');''
+        console.log(name + ', what is the hardest part about be a ' + job);
+      }
+      } else {
+        return function(name){
+          console.log( 'Hello ' + name + ', what do you do being a ' + job);''
+        }
       }
     }
-  }
+  
+    let teacherQuestion = interviewQuestions('teacher');
 
 
-  let teachQuestion = interviewQuestion('teacher');
+    let designerQuestion = interviewQuestions('designer');
 
-  teach
-  var designerQuestion = interviewQuestion('designer');
+      teacherQuestion('john');
+  designerQuestion('John');
