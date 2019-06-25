@@ -883,29 +883,95 @@ The Ternary Operator
 
 //   interviewQuestions('teacher')('Tim');
 
+// function interviewQuestions(job){
+//   if( job === 'teacher') {
+//     return function(name) {
+//       console.log(name + ', why do you want to be a teacher');
+//     }
+//   } else if (job === 'developer'){
+//     return function(name){
+//       console.log(name + ', what is a object?');
+//     }
+//   } else {
+//     return function(name){
+//       console.log( 'Hello ' + name + ', what do you do?');''
+//     }
+//   }
+// }
+
+
+// let teacherQuestion = interviewQuestions('teacher');
+
+// let designerQuestion = interviewQuestions('designer');
+
+// teacherQuestion('john');
+// designerQuestion('John');
+
+// interviewQuestions('teacher')('Tim');
+
 
  // *******************
 
-  function interviewQuestions(job){
-    if( job === 'teacher') {
-      return function(name) {
-        console.log(name + ', why do you want to be a' + job);
-      }
-    } else if (job === 'developer'){
-      return function(name){
-        console.log(name + ', what is the hardest part about be a ' + job);
-      }
-      } else {
-        return function(name){
-          console.log( 'Hello ' + name + ', what do you do being a ' + job);''
-        }
-      }
-    }
-  
-    let teacherQuestion = interviewQuestions('teacher');
+//   function interviewQuestions(job){
+//     let a;
+//     if( job === 'teacher') {
+//       a = ', why do you want to be a teacher';
+//     } else if (job === 'developer'){
+//        a = ', what is a object?';
+//     } else {
+//         a = ' , what do you do?';
+//     }
 
 
-    let designerQuestion = interviewQuestions('designer');
+//     return function(name){
+//       console.log(name + a);
+//     }
+//   }
 
-      teacherQuestion('john');
-  designerQuestion('John');
+//   let teacherQuestion = interviewQuestions('teacher');
+
+//   let designerQuestion = interviewQuestions('designer');
+
+//   teacherQuestion('john');
+// designerQuestion('John');
+
+// interviewQuestions('teacher')('Tim');
+
+//// Coding challege 
+
+let Question = function(question,answer,correctAnswer){
+ this.question = question;
+ this.answer = answer;
+ this.correctAnswer = correctAnswer;
+ this.randomQuestion = function(){
+   
+   
+ }
+}
+
+// let questions = [
+// new Question("Who is my favortie music artist?", ['Kanye West','Maulma','Drake'],1),
+// new Question("what is my favrotie anime?", ['Deathnote','Dragonball Z','Naturo'],1),
+// new Question("How old am I?", [24,36,19],0)];
+
+
+// // prompt(questions[Math.floor(Math.random() * questions.length)].question);
+
+// console.log(questions[Math.floor(Math.random() * questions.length)].question);
+
+
+
+
+
+
+
+let question1 = new Question("Who is my favortie music artist?", ['Kanye West','Maulma','Drake'],1)
+
+let question2 = new Question("what is my favrotie anime?", ['Deathnote','Dragonball Z','Naturo'],1)
+
+let question3 = new Question("How old am I?", [24,36,19],0)
+
+let questions = [question1,question2,question3];
+console.log(questions)
+
+console.log(questions[Math.floor(Math.random() * questions.length)].question);
