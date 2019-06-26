@@ -939,14 +939,25 @@ The Ternary Operator
 
 //// Coding challege 
 
+
+// this.promptAnswerCheck = function(){
+//   promptAnswer prompt("Please select your answer here");
+//   if (promptAnswer === correctAnswer){
+//     return console.log("Thats correct")
+//   } else {
+//     return console.log("Incorrect")
+//   }
+//  }
+
+
 let Question = function(question,answer,correctAnswer){
  this.question = question;
  this.answer = answer;
  this.correctAnswer = correctAnswer;
  this.randomQuestion = function(){
-   
-   
- }
+  return console.log(questions[Math.floor(Math.random() * questions.length)].question);
+  }
+ 
 }
 
 // let questions = [
@@ -954,24 +965,27 @@ let Question = function(question,answer,correctAnswer){
 // new Question("what is my favrotie anime?", ['Deathnote','Dragonball Z','Naturo'],1),
 // new Question("How old am I?", [24,36,19],0)];
 
-
-// // prompt(questions[Math.floor(Math.random() * questions.length)].question);
+// prompt(questions[Math.floor(Math.random() * questions.length)].question);
 
 // console.log(questions[Math.floor(Math.random() * questions.length)].question);
 
 
+// let question1 = new Question("Who is my favortie music artist?", ['Kanye West','Maulma','Drake'],1);
+
+// let question2 = new Question("what is my favrotie anime?", ['Deathnote','Dragonball Z','Naturo'],1)
+
+// let question3 = new Question("How old am I?", [24,36,19],0)
 
 
+let question1 = new Question("Who is my favortie music artist?", {1: 'kanye west', 2:'Maluma',3: 'Drake'},1);
 
+let question2 = new Question("Who is my favortie music artist?", {1: 'kanye west', 2:'Maluma',3: 'Drake'},1);
 
-
-let question1 = new Question("Who is my favortie music artist?", ['Kanye West','Maulma','Drake'],1)
-
-let question2 = new Question("what is my favrotie anime?", ['Deathnote','Dragonball Z','Naturo'],1)
-
-let question3 = new Question("How old am I?", [24,36,19],0)
+let question3 = new Question("Who is my favortie music artist?", {1: 'kanye west', 2:'Maluma',3: 'Drake'},1);
 
 let questions = [question1,question2,question3];
-console.log(questions)
+
+
 
 console.log(questions[Math.floor(Math.random() * questions.length)].question);
+
