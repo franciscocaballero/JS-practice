@@ -949,43 +949,52 @@ The Ternary Operator
 //   }
 //  }
 
+(function (){
 
-let Question = function(question,answer,correctAnswer){
+
+
+
+
+let Question = function(question,answer,correctAnswer) { 
  this.question = question;
  this.answer = answer;
  this.correctAnswer = correctAnswer;
- this.randomQuestion = function(){
-  return console.log(questions[Math.floor(Math.random() * questions.length)].question);
-  }
+}
  
+Question.prototype.displayQuestion = function() {
+  console.log(this.question);
+
+  for (let i = 0; i < this.answer.length; i++) {
+    console.log(i + ":" + this.answer[i]);
+  }
+
 }
 
-// let questions = [
-// new Question("Who is my favortie music artist?", ['Kanye West','Maulma','Drake'],1),
-// new Question("what is my favrotie anime?", ['Deathnote','Dragonball Z','Naturo'],1),
-// new Question("How old am I?", [24,36,19],0)];
+Question.prototype.checkAnswer = function(ans) {
 
-// prompt(questions[Math.floor(Math.random() * questions.length)].question);
+  if(ans === this.correctAnswer){
+    console.log('Good Job');
+  } else {
+    console.log('Try again');
+  }
+}
 
-// console.log(questions[Math.floor(Math.random() * questions.length)].question);
+let question1 = new Question("Who is my favortie music artist?", ['Kanye West','Maulma','Drake'],1);
 
+let question2 = new Question("what is my favrotie anime?", ['Deathnote','Dragonball Z','Naturo'],1);
 
-// let question1 = new Question("Who is my favortie music artist?", ['Kanye West','Maulma','Drake'],1);
-
-// let question2 = new Question("what is my favrotie anime?", ['Deathnote','Dragonball Z','Naturo'],1)
-
-// let question3 = new Question("How old am I?", [24,36,19],0)
-
-
-let question1 = new Question("Who is my favortie music artist?", {1: 'kanye west', 2:'Maluma',3: 'Drake'},1);
-
-let question2 = new Question("Who is my favortie music artist?", {1: 'kanye west', 2:'Maluma',3: 'Drake'},1);
-
-let question3 = new Question("Who is my favortie music artist?", {1: 'kanye west', 2:'Maluma',3: 'Drake'},1);
+let question3 = new Question("How old am I?", [24,36,19],0);
 
 let questions = [question1,question2,question3];
 
 
+let n = Math.floor(Math.random() * questions.length);
 
-console.log(questions[Math.floor(Math.random() * questions.length)].question);
+questions[n].displayQuestion();
 
+let answer = parseInt(prompt('Please select the correct answer'));
+// ^ converts string to number
+
+questions[n].checkAnswer(answer);
+
+})();
