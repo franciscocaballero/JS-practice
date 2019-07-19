@@ -949,52 +949,145 @@ The Ternary Operator
 //   }
 //  }
 
-(function (){
+// (function (){
 
-
-
-
-
-let Question = function(question,answer,correctAnswer) { 
- this.question = question;
- this.answer = answer;
- this.correctAnswer = correctAnswer;
-}
+// let Question = function(question,answer,correctAnswer) { 
+//  this.question = question;
+//  this.answer = answer;
+//  this.correctAnswer = correctAnswer;
+// }
  
-Question.prototype.displayQuestion = function() {
-  console.log(this.question);
+// Question.prototype.displayQuestion = function() {
+//   console.log(this.question);
 
-  for (let i = 0; i < this.answer.length; i++) {
-    console.log(i + ":" + this.answer[i]);
-  }
+//   for (let i = 0; i < this.answer.length; i++) {
+//     console.log(i + ":" + this.answer[i]);
+//   }
 
+// }
+
+// Question.prototype.checkAnswer = function(ans) {
+
+//   if(ans === this.correctAnswer){
+//     console.log('Good Job');
+//     questions[n]
+//   } else {
+//     console.log('Try again');
+//   }
+
+// }
+
+// Question.prototype.displayNextQuestion = function() {
+  
+//   for (let i = 0; i < questions.length; i++) {
+//     console.log(this.question[n]);
+//   }
+
+
+//   // while(answer === this.correctAnswer) {
+//   //   console.log(questions[n]);
+//     // displayQuestion()
+//     // let answer = parseInt(prompt('Please select the correct answer'));
+//       // questions[n].displayQuestion();
+//       // questions[n].checkAnswer(answer);
+//   // }
+
+// }
+
+// let question1 = new Question("Who is my favortie music artist?", ['Kanye West','Maulma','Drake'],1);
+
+// let question2 = new Question("what is my favrotie anime?", ['Deathnote','Dragonball Z','Naturo'],1);
+
+// let question3 = new Question("How old am I?", [24,36,19],0);
+
+// let questions = [question1,question2,question3];
+
+
+// let n = Math.floor(Math.random() * questions.length);
+
+
+// questions[n].displayQuestion();
+
+// let answer = parseInt(prompt('Please select the correct answer'));
+// // ^ converts string to number
+
+// questions[n].checkAnswer(answer);
+
+// questions[n].displayNextQuestion();
+
+
+// })();
+
+// ES5
+
+// const cow = 'cow';
+
+// console.log(cow);
+
+// var me = 'me';
+
+// var me = 'Fran';
+
+// console.log(me);
+
+// const user = {
+//   name: 'ed',
+//   age: 24,
+//   sayName: function() {
+//     console.log(`My name is `)
+//   }
+// }
+
+// const Person = function(name,haircolor,eyecolor){
+//   this.name = name;
+//   this.haircolor = eyecolor;
+//   this.eyecolor = eyecolor;
+// }
+
+// const Francisco = new Person ('Francisco', 'Brown','brown');
+
+// console.log(Francisco);
+
+// sayList = () => {}
+
+
+// class ShoppingList {
+//   constructor(items, num) {
+//     this.items = items;
+//     this.num = num;
+//   }
+//   sayList() {
+//     console.log(this.items);
+//   }
+// }
+
+// const myList = new ShoppingList(['Milk','Tuna','Jello'], 3);
+
+// myList.sayList();
+
+// class Product extends ShoppingList{
+//   constructor(items, num, amount, cost){
+//     super(items, num)
+//     this.amount = amount;
+//     this.cost = cost;
+
+//   }
+// }
+
+// const product = new Product(['monster','candy','paper'], 3, 3, 200);
+
+// product.sayList();
+
+
+// OLD Javascript 
+
+function getData(data, callback) {
+  setTimeout(()=> {
+    console.log('reading from the database');
+    callback({ data: data});
+  }, 2000);
 }
 
-Question.prototype.checkAnswer = function(ans) {
-
-  if(ans === this.correctAnswer){
-    console.log('Good Job');
-  } else {
-    console.log('Try again');
-  }
-}
-
-let question1 = new Question("Who is my favortie music artist?", ['Kanye West','Maulma','Drake'],1);
-
-let question2 = new Question("what is my favrotie anime?", ['Deathnote','Dragonball Z','Naturo'],1);
-
-let question3 = new Question("How old am I?", [24,36,19],0);
-
-let questions = [question1,question2,question3];
-
-
-let n = Math.floor(Math.random() * questions.length);
-
-questions[n].displayQuestion();
-
-let answer = parseInt(prompt('Please select the correct answer'));
-// ^ converts string to number
-
-questions[n].checkAnswer(answer);
-
-})();
+getData(5, function(data){
+  console.log(data)
+});
