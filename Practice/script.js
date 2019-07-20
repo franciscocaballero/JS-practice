@@ -1081,13 +1081,106 @@ The Ternary Operator
 
 // OLD Javascript 
 
-function getData(data, callback) {
-  setTimeout(()=> {
-    console.log('reading from the database');
-    callback({ data: data});
-  }, 2000);
+// function getData(data, callback) {
+//   setTimeout(()=> {
+//     console.log('reading from the database');
+//     callback({ data: data});
+//   }, 2000);
+// }
+
+// getData(5, function(data){
+//   console.log(data)
+// });
+
+// // ES5
+// var name5 = ' Jane Smith';
+
+// var age = 23;
+
+// name5 = 'Jane Miller';
+
+// console.log(name5);
+
+// //ES6
+
+// const name6 = 'jane smith'
+
+// let change = 24;
+
+// name6 = 'jane miller'
+// console.log(name6)
+
+// //es5 
+
+// function driverLicense(passTest) {
+
+//   if (passTest) {
+//   }
+//   var name = 'john';
+//   var yearOfBirth = 1994;
+
+//   console.log(name + 'born in ' + yearOfBirth + 'is now 24');
+// }
+
+// driverLicense(true);
+
+// ///ES6
+
+// function driverLicense(passTest) {
+
+//   if (passTest) {
+//   }
+// }
+// let name = 'john';
+// const yearOfBirth = 1994;
+
+// console.log(name + 'born in ' + yearOfBirth + 'is now 24');
+
+// driverLicense(true);
+
+
+// const a = 1;
+
+// let b = 2;
+
+// console.log(a + b);
+
+let firstName = 'john';
+let lastName = 'Smith';
+const yearOfBirth = 1990;
+
+function calcAge(year) {
+  return 2016 - year;
 }
 
-getData(5, function(data){
-  console.log(data)
+console.log(' This is ' + firstName + ' ' + lastName + 'born in' + yearOfBirth);
+
+// Es6 
+console.log(`This is ${firstName} ${lastName} `)
+
+const n = `${firstName} ${lastName}`
+
+console.log(n.startsWith('J'));
+console.log(n.endsWith('J'));
+console.log(n.includes(' '));
+console.log(firstName.repeat(5));
+
+const years = [1990, 1965, 1982];
+
+// ES5 
+
+var ages5 = years.map(function(el){
+  return 2016 - el;
 });
+console.log(ages5);
+
+//ES6
+
+// const ages6 = years.map(el => 2016 - el);
+// console.log(ages6);
+
+let ages6 = years.map((el , index) => `Age el ${index + 1}: ${2016 - el}.`);
+
+console.log(ages6);
+
+ 
