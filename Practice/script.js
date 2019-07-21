@@ -1145,42 +1145,84 @@ The Ternary Operator
 
 // console.log(a + b);
 
-let firstName = 'john';
-let lastName = 'Smith';
-const yearOfBirth = 1990;
+// let firstName = 'john';
+// let lastName = 'Smith';
+// const yearOfBirth = 1990;
 
-function calcAge(year) {
-  return 2016 - year;
-}
+// function calcAge(year) {
+//   return 2016 - year;
+// }
 
-console.log(' This is ' + firstName + ' ' + lastName + 'born in' + yearOfBirth);
+// console.log(' This is ' + firstName + ' ' + lastName + 'born in' + yearOfBirth);
 
-// Es6 
-console.log(`This is ${firstName} ${lastName} `)
+// // Es6 
+// console.log(`This is ${firstName} ${lastName} `)
 
-const n = `${firstName} ${lastName}`
+// const n = `${firstName} ${lastName}`
 
-console.log(n.startsWith('J'));
-console.log(n.endsWith('J'));
-console.log(n.includes(' '));
-console.log(firstName.repeat(5));
+// console.log(n.startsWith('J'));
+// console.log(n.endsWith('J'));
+// console.log(n.includes(' '));
+// console.log(firstName.repeat(5));
 
-const years = [1990, 1965, 1982];
+// const years = [1990, 1965, 1982];
 
-// ES5 
+// // ES5 
 
-var ages5 = years.map(function(el){
-  return 2016 - el;
-});
-console.log(ages5);
+// var ages5 = years.map(function(el){
+//   return 2016 - el;
+// });
+// console.log(ages5);
 
-//ES6
+// //ES6
 
-// const ages6 = years.map(el => 2016 - el);
+// // const ages6 = years.map(el => 2016 - el);
+// // console.log(ages6);
+
+// let ages6 = years.map((el , index) => `Age el ${index + 1}: ${2016 - el}.`);
+
 // console.log(ages6);
 
-let ages6 = years.map((el , index) => `Age el ${index + 1}: ${2016 - el}.`);
 
-console.log(ages6);
+// ES6
+
+// const [name, year ] = ['john', 26];
+
+// console.log(name);
+// console.log(year);
+
+
+
+// function calcAgeRetire(year) {
+//   const age = new Date().getFullYear() - year;
+//   return [age, 65 - age];
+// }
+
+// const [age2, retirement] = calcAgeRetire(1994);
+
+// console.log(age2);
+// console.log(retirement);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  
