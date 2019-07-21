@@ -1205,18 +1205,34 @@ The Ternary Operator
 
 
 
+function addFourBabies (a, b, c, d){
+  return a + b + c + d;
+}
 
+var sum1 = addFourBabies(18, 30, 12, 21) ;
+console.log(sum1);
 
+//ES5 
+let ages = [18,30,12, 21];
+var sum2 = addFourBabies.apply(null, ages);
 
+console.log(sum2);
 
+//ES6
 
+const sum3 = addFourBabies(...ages);
+console.log(sum3);
 
+// Arrays 
+const familySmith = ['John', 'Jane', 'Mark'];
 
+const familyMiller = ['Marry', 'Bob', 'Ann'];
 
+const bigFam = [...familySmith, ...familyMiller];
 
+console.log(bigFam);
 
-
-
+ 
 
 
 
