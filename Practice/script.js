@@ -1205,40 +1205,129 @@ The Ternary Operator
 
 
 
-function addFourBabies (a, b, c, d){
-  return a + b + c + d;
+// function addFourBabies (a, b, c, d){
+//   return a + b + c + d;
+// }
+
+// var sum1 = addFourBabies(18, 30, 12, 21) ;
+// console.log(sum1);
+
+// //ES5 
+// let ages = [18,30,12, 21];
+// var sum2 = addFourBabies.apply(null, ages);
+
+// console.log(sum2);
+
+// //ES6
+
+// const sum3 = addFourBabies(...ages);
+// console.log(sum3);
+
+// // Arrays 
+// const familySmith = ['John', 'Jane', 'Mark'];
+
+// const familyMiller = ['Marry', 'Bob', 'Ann'];
+
+// const bigFam = [...familySmith, ...familyMiller];
+
+// console.log(bigFam);
+
+ 
+
+//REST Parameters
+
+// ES5 
+
+// function isFullAge5() {
+//     console.log(arguments);
+
+//     let agrsArr = Array.prototype.slice.call(arguments);
+
+//     agrsArr.forEach(function(cur) {
+//       console.log((2016 - cur) >= 18);
+//     })
+// }
+
+// isFullAge5(1990, 1994,1965);
+
+
+ // ES5
+//  function isFullAge6() {
+
+//     console.log(arguments);
+//  }
+
+// function isFullAge(...years) {
+
+//   years.forEach(cur => console.log(2016 - cur) >= 18));
+// }
+
+// isFullAge(1990, 1999, 1965, 2016, 1987);
+
+// function isFullAge6(limit,...years) {
+//   years.forEach(cur => console.log((2019 - cur) >= limit));
+// }
+
+// isFullAge6(16, 1990, 1999, 1965, 2016, 1987);
+
+//Maps
+
+// const question = new Map();
+
+// question.set('question', 'What is the official name of the latest JS Version');
+// question.set(1, 'ES5');
+// question.set(2, 'ES6');
+// question.set(3, 'ES2015');
+// question.set(4, 'ES7');
+// question.set('correct', 3);
+// question.set(true, 'Correct answer')
+// question.set(false, 'Wrong, Please try again!');
+
+// console.log(question.get('question'));
+// // console.log(question.size);
+
+// if(question.has(4)) {
+//   // question.delete(4);
+// }
+
+// // question.clear();
+
+// question.forEach((value, key) => 
+// console.log(`Thius is ${key}, and it's set to ${value}`));
+
+
+// for (let [key, value] of question.entries()) {
+//   if (typeof(key) === 'number') {
+//     console.log(`Answer ${key}: ${value}`);
+//   }
+// }
+
+// const ans = parseInt(prompt('Write the correct answer'));
+
+// console.log(question.get(ans === question.get('correct')));
+
+
+// Classes 
+
+class Person {
+  constructor(name, yearOfBirth, job){
+    this.name = name;
+    this.yearOfBirth = yearOfBirth;
+    this.job = job;
+  }
+  calculateAge() {
+    var age = new Data().getFullYear - this.yearOfBirth;
+    console.log(age);
+  }
 }
 
-var sum1 = addFourBabies(18, 30, 12, 21) ;
-console.log(sum1);
+// const john6 = new Person6('john',1990,'teacher') 
 
-//ES5 
-let ages = [18,30,12, 21];
-var sum2 = addFourBabies.apply(null, ages);
+class Athlete6 extends Person {
+  constructor(name, yearOfBirth, job, olymicGames, medals){
+    super(name, yearOfBirth,job);
+      this.olymicGames = olymicGames;
+      this.medals = medals;
 
-console.log(sum2);
-
-//ES6
-
-const sum3 = addFourBabies(...ages);
-console.log(sum3);
-
-// Arrays 
-const familySmith = ['John', 'Jane', 'Mark'];
-
-const familyMiller = ['Marry', 'Bob', 'Ann'];
-
-const bigFam = [...familySmith, ...familyMiller];
-
-console.log(bigFam);
-
- 
-
-
-
-
-
-
-
-
- 
+    }
+  }
