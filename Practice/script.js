@@ -1414,9 +1414,23 @@ The Ternary Operator
 // johnAthlete6.calculateAge();
 
 class Park {
-  constructor(name, buildYear){
+  constructor(name, buildYear,trees,parkArea){
     this.name = name;
     this.buildYear = buildYear;
+    this.trees = trees;
+    this.parkArea = parkArea;
+  }
+  calcTreeDensity() {
+    let treeDesity;
+
+    treeDesity = this.trees / this.parkArea;
+
+    console.log(`Park ${this.name} has a tree Density of ${treeDesity} per square km.`);
+  }
+
+
+  calcAverageAge(...ages) {
+    ages.forEach()
   }
 }
 
@@ -1426,11 +1440,21 @@ class Streets extends Park {
   }
 }
 
-const Park1 = new Park('Park 1', 1999);
-const Park2 = new Park('Park 2', 2003);
-const Park3 = new Park('Park 3', 2010);
+const Park1 = new Park('Park 1', 1999, 888, 54);
+const Park2 = new Park('Park 2', 2003, 1002, 66);
+const Park3 = new Park('Park 3', 2010, 967, 62);
 
-console.log(Park1);
+const Street1 = new Streets('Street 1', 1975);
+const Street2 = new Streets('Street 2', 1988);
+const Street3 = new Streets('Street 3', 2000);
+const Street4 = new Streets('Street 4', 2002);
+
+
+
+
+
+
+Park1.calcTreeDensity();
 
 
 
