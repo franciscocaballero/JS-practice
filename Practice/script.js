@@ -1307,27 +1307,131 @@ The Ternary Operator
 // console.log(question.get(ans === question.get('correct')));
 
 
-// Classes 
+// // Classes 
 
-class Person {
-  constructor(name, yearOfBirth, job){
+// class Person {
+//   constructor(name, yearOfBirth, job){
+//     this.name = name;
+//     this.yearOfBirth = yearOfBirth;
+//     this.job = job;
+//   }
+//   calculateAge() {
+//     var age = new Data().getFullYear - this.yearOfBirth;
+//     console.log(age);
+//   }
+// }
+
+// // const john6 = new Person6('john',1990,'teacher') 
+
+// class Athlete6 extends Person {
+//   constructor(name, yearOfBirth, job, olymicGames, medals){
+//     super(name, yearOfBirth,job);
+//       this.olymicGames = olymicGames;
+//       this.medals = medals;
+
+//     } 
+//     wonMedal() {
+//       this.medals++;
+//       console.log(this.medals);
+//     }
+//   }
+
+//   const johnAthlete6 = new Athlete6('john', 1994, 'swimmer', 3, 10);
+
+//   johnAthlete6.wonMedal();
+//   johnAthlete6.calculateAge();
+
+  // Sub classes 
+
+  // ES5 
+
+//   var  Person5 = function(name, yearOfBirth, job){
+//       this.name = name;
+//       this.yearOfBirth = yearOfBirth;
+//       this.job = job;
+//     }
+
+
+//     Person5.prototype.calculateAge =  function() {
+//       var age = new Date().getFullYear() - this.yearOfBirth;
+//       console.log(age);
+//     }
+    
+//     var Athlete5 = function(name, yearOfBirth, job,olymicGames, medals) {
+      
+//       Person5.call(this, name, yearOfBirth, job);
+      
+//       this.olymicGames = olymicGames;
+//       this.medals = medals;
+//     }
+    
+    
+//     Athlete5.prototype = Object.create(Person5.prototype);
+//     // connects prototypes
+    
+//         Athlete5.prototype.wonMedal = function() {
+//           this.medals++;
+//           console.log(this.medals);
+//         }
+
+// var johnAthlete5 = new Athlete5('John', 1990, 'Swiimer', 3, 10);
+
+
+// johnAthlete5.calculateAge();
+// johnAthlete5.wonMedal();
+
+// // ES6 
+
+// class Person6 {
+//   constructor(name, yearOfBirth, job){
+//     this.name = name;
+//     this.yearOfBirth = yearOfBirth;
+//     this.job = job;
+//   }
+//   calculateAge() {
+//     var age = new Date().getFullYear() - this.yearOfBirth;
+//     console.log(age);
+//   }
+// }
+
+// class Athlete6 extends Person6 {
+//   constructor(ame, yearOfBirth, job, olymicGames, medals) {
+//       super(name, yearOfBirth, job);
+//       this.olymicGames = olymicGames;
+//       this.medals = medals;
+//   }
+
+//   wonMedal() {
+//     this.medals++;
+//     console.log(this.medals);
+//   }
+// }
+
+// const johnAthlete6 = new Athlete6('john', 1990, 'swimmer', 3, 10);
+
+
+// johnAthlete6.wonMedal();
+// johnAthlete6.calculateAge();
+
+class Park {
+  constructor(name, buildYear){
     this.name = name;
-    this.yearOfBirth = yearOfBirth;
-    this.job = job;
-  }
-  calculateAge() {
-    var age = new Data().getFullYear - this.yearOfBirth;
-    console.log(age);
+    this.buildYear = buildYear;
   }
 }
 
-// const john6 = new Person6('john',1990,'teacher') 
-
-class Athlete6 extends Person {
-  constructor(name, yearOfBirth, job, olymicGames, medals){
-    super(name, yearOfBirth,job);
-      this.olymicGames = olymicGames;
-      this.medals = medals;
-
-    }
+class Streets extends Park {
+  constructor(name, buildYear){
+    super(name, buildYear);
   }
+}
+
+const Park1 = new Park('Park 1', 1999);
+const Park2 = new Park('Park 2', 2003);
+const Park3 = new Park('Park 3', 2010);
+
+console.log(Park1);
+
+
+
+
