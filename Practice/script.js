@@ -15,7 +15,7 @@
 
 
 /*
-*/
+ */
 /***************************************
  * Variable mutation and type coercion 
  */
@@ -170,7 +170,7 @@
 
 
 
-/********* Boolean logic ************************ */ 
+/********* Boolean logic ************************ */
 
 // var firstName = 'john';
 // var age = 20;
@@ -264,9 +264,9 @@ The Ternary Operator
 
 //  }
 
- /**************
-  *  Coding Challenge
-  */
+/**************
+ *  Coding Challenge
+ */
 // var john = 'John';
 // var mike = 'Mike';
 
@@ -310,7 +310,7 @@ The Ternary Operator
 
 //  yearsUntilRetirement(1950, 'John');
 
- /** Function Statements and Expressions*/
+/** Function Statements and Expressions*/
 
 // Function Declaration 
 
@@ -335,11 +335,11 @@ The Ternary Operator
  * Arrays 
  */
 
- // Init new array 
+// Init new array 
 
 //  var names = ['john', 'tim', 'bob'];
 
- 
+
 
 // console.log(names[2] = 'cisco');
 // console.log(names);
@@ -474,7 +474,7 @@ The Ternary Operator
 // }
 
 // function calcTip(bill){
-  
+
 //     let tips = [];
 //     let paid = [];
 
@@ -489,25 +489,25 @@ The Ternary Operator
 //         return percentage * bill;
 
 //     }
-  
+
 //   console.log(calcTip(124))
 // let john = {
 //   bills: [124,48,268,180,42],
 //   tips: [],
 //   totalAmount: [],
 //   calcTip: function(){
-    
+
 //     for(let i = 0; i < this.bills.length; i++){
 //       let percentage;
 //       if(this.bills[i] < 50){
 //         percentage = .2;
-        
+
 //       } else if (this.bills[i] < 50 || this.bills[i] < 200){
 //         percentage = .15;
-        
+
 //       } else {
 //         percentage = .10;
-     
+
 //       }
 //        this.tips.push(percentage * this.bills[i]);
 //        this.totalAmount.push(this.tips[i] + this.bills[i]);
@@ -526,19 +526,19 @@ The Ternary Operator
 //   calcTip: function(){
 //     this.tips = [];
 //     this.totalAmount= [];
-    
+
 //     for(let i = 0; i < this.bills.length; i++){
 //       let percentage;
 //       let bill = this.bills[i];
 //       if(bill < 50){
 //         percentage = .2;
-        
+
 //       } else if (bill < 50 || bill < 200){
 //         percentage = .15;
-        
+
 //       } else {
 //         percentage = .10;
-     
+
 //       }
 //        this.tips[i] = bill * percentage;
 //        this.totalAmount[i] = bill + bill * percentage;
@@ -554,36 +554,36 @@ The Ternary Operator
 //   calcTip: function(){
 //     this.tips = [];
 //     this.totalAmount= [];
-    
+
 //     for(let i = 0; i < this.bills.length; i++){
 //       let percentage;
 //       let bill = this.bills[i];
 //       if(bill < 100){
 //         percentage = .2;
-        
+
 //       } else if (bill < 100 || bill < 300){
 //         percentage = .10;
-        
+
 //       } else {
 //         percentage = .25;
-        
+
 //       }
 //        this.tips[i] = bill * percentage;
 //        this.totalAmount[i] = bill + bill * percentage;
 //       }
 //     }
 //   }
-  
-  
-  
-  
-  
+
+
+
+
+
 //   function average(tips){
 //     for(var i = 0; i < tips.length; i++) {
-      
+
 //     }
 //   }
-  
+
 //   function calcAverage(tips) {
 //     var sum = 0;
 //     for (var i = 0; i < tips.length; i++) {
@@ -591,8 +591,8 @@ The Ternary Operator
 //     }
 //     return sum / tips.length;
 //   }
-  
-  
+
+
 //   // [2, 6, 4] -> 0 / 2 / 8 / 12
 
 
@@ -828,21 +828,21 @@ The Ternary Operator
 
 //   // IIFE's 
 
-  // (function (){
-  //   let score = Math.random() * 10;
-  //   console.log(score >= 5);
-  // })();
+// (function (){
+//   let score = Math.random() * 10;
+//   console.log(score >= 5);
+// })();
 
-  // // console.log(score);
+// // console.log(score);
 
-  // (function (goodLuck) {
-  //   let score = Math.random() * 10;
-  //   console.log(score >= 5 - goodLuck);
-  // })(5);
+// (function (goodLuck) {
+//   let score = Math.random() * 10;
+//   console.log(score >= 5 - goodLuck);
+// })(5);
 
 
 
-  // Closures 
+// Closures 
 
 //   function retirement(reitrementAge) {
 //     let a = ' years left until retirement';
@@ -910,7 +910,7 @@ The Ternary Operator
 // interviewQuestions('teacher')('Tim');
 
 
- // *******************
+// *******************
 
 //   function interviewQuestions(job){
 //     let a;
@@ -956,7 +956,7 @@ The Ternary Operator
 //  this.answer = answer;
 //  this.correctAnswer = correctAnswer;
 // }
- 
+
 // Question.prototype.displayQuestion = function() {
 //   console.log(this.question);
 
@@ -978,7 +978,7 @@ The Ternary Operator
 // }
 
 // Question.prototype.displayNextQuestion = function() {
-  
+
 //   for (let i = 0; i < questions.length; i++) {
 //     console.log(this.question[n]);
 //   }
@@ -1232,7 +1232,7 @@ The Ternary Operator
 
 // console.log(bigFam);
 
- 
+
 
 //REST Parameters
 
@@ -1251,7 +1251,7 @@ The Ternary Operator
 // isFullAge5(1990, 1994,1965);
 
 
- // ES5
+// ES5
 //  function isFullAge6() {
 
 //     console.log(arguments);
@@ -1341,9 +1341,9 @@ The Ternary Operator
 //   johnAthlete6.wonMedal();
 //   johnAthlete6.calculateAge();
 
-  // Sub classes 
+// Sub classes 
 
-  // ES5 
+// ES5 
 
 //   var  Person5 = function(name, yearOfBirth, job){
 //       this.name = name;
@@ -1356,19 +1356,19 @@ The Ternary Operator
 //       var age = new Date().getFullYear() - this.yearOfBirth;
 //       console.log(age);
 //     }
-    
+
 //     var Athlete5 = function(name, yearOfBirth, job,olymicGames, medals) {
-      
+
 //       Person5.call(this, name, yearOfBirth, job);
-      
+
 //       this.olymicGames = olymicGames;
 //       this.medals = medals;
 //     }
-    
-    
+
+
 //     Athlete5.prototype = Object.create(Person5.prototype);
 //     // connects prototypes
-    
+
 //         Athlete5.prototype.wonMedal = function() {
 //           this.medals++;
 //           console.log(this.medals);
@@ -1414,7 +1414,7 @@ The Ternary Operator
 // johnAthlete6.calculateAge();
 
 class Park {
-  constructor(name, buildYear,trees,parkArea){
+  constructor(name, buildYear, trees, parkArea) {
     this.name = name;
     this.buildYear = buildYear;
     this.trees = trees;
@@ -1428,21 +1428,43 @@ class Park {
     console.log(`Park ${this.name} has a tree Density of ${treeDesity} per square km.`);
   }
 
-
   calcAverageAge(...ages) {
-    ages.forEach()
+    let allAges;
+    let average;
+    allAges = ages.map(cur => (2019 - cur)).reduce((a, b) => (a + b), 0);
+    average = allAges / 3;
+    console.log(`Our parks have an average of ${average} years :D`);
   }
+
+  moreYears(arr) {
+
+    console.log(arr[0].trees);
+
+      if (arr[0].trees > 1000) {
+        console.log(`${tree.name} has the most trees`);
+      } else {
+        console.log('fail')
+      }
+
+    // for (let i of tree) {
+
+    // }
+
+  }
+
 }
 
 class Streets extends Park {
-  constructor(name, buildYear){
+  constructor(name, buildYear) {
     super(name, buildYear);
   }
 }
 
-const Park1 = new Park('Park 1', 1999, 888, 54);
+const Park1 = new Park('Park 1', 1999, 1888, 54);
 const Park2 = new Park('Park 2', 2003, 1002, 66);
 const Park3 = new Park('Park 3', 2010, 967, 62);
+
+let allParks = [Park1, Park2, Park3];
 
 const Street1 = new Streets('Street 1', 1975);
 const Street2 = new Streets('Street 2', 1988);
@@ -1450,12 +1472,6 @@ const Street3 = new Streets('Street 3', 2000);
 const Street4 = new Streets('Street 4', 2002);
 
 
-
-
-
-
 Park1.calcTreeDensity();
-
-
-
-
+Park1.calcAverageAge(Park1.buildYear, Park2.buildYear, Park3.buildYear);
+Park1.moreYears(allParks);
