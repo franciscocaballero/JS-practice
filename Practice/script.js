@@ -1448,9 +1448,10 @@ class Park {
 }
 
 class Streets extends Park {
-  constructor(name, buildYear, length) {
+  constructor(name, buildYear, length, size) {
     super(name, buildYear);
     this.length = length;
+    this.size = size;
   }
   averageStreet(arr) {
     let streetLengths;
@@ -1461,7 +1462,12 @@ class Streets extends Park {
     averageLengths = streetLengths / 4;
 
     console.log(`Our four streets have a total length of ${streetLengths} Miles and a average of ${averageLengths} Miles`);
+  }
 
+  streetClass(arr){
+       for (let i = 0; i < arr.length; i++) {
+        console.log(`${arr[i].name} was buit os ${arr[i].buildYear}, is a ${arr[i].size} street`);
+    }
   }
 }
 
@@ -1471,10 +1477,10 @@ const Park3 = new Park('Park 3', 2010, 967, 62);
 
 let allParks = [Park1, Park2, Park3];
 
-const Street1 = new Streets('Street 1', 1975, 7);
-const Street2 = new Streets('Street 2', 1988, 5);
-const Street3 = new Streets('Street 3', 2000, 9);
-const Street4 = new Streets('Street 4', 2002, 7);
+const Street1 = new Streets('Street 1', 1975, 7, 'normal');
+const Street2 = new Streets('Street 2', 1988, 5, 'small');
+const Street3 = new Streets('Street 3', 2000, 9, 'big');
+const Street4 = new Streets('Street 4', 2002, 7, 'normal');
 
 let allStreets = [Street1, Street2, Street3, Street4];
 
@@ -1483,3 +1489,4 @@ Park1.calcAverageAge(Park1.buildYear, Park2.buildYear, Park3.buildYear);
 Park1.moreYears(allParks);
 
 Street1.averageStreet(allStreets);
+Street1.streetClass(allStreets);
