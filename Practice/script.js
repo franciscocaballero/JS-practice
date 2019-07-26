@@ -1437,41 +1437,49 @@ class Park {
   }
 
   moreYears(arr) {
+    for (let i = 0; i < arr.length; i++) {
 
-    console.log(arr[0].trees);
-
-      if (arr[0].trees > 1000) {
-        console.log(`${tree.name} has the most trees`);
-      } else {
-        console.log('fail')
+      if (arr[i].trees > 1000) {
+        console.log(`${arr[i].name} has the most trees`);
       }
-
-    // for (let i of tree) {
-
-    // }
-
+    }
   }
 
 }
 
 class Streets extends Park {
-  constructor(name, buildYear) {
+  constructor(name, buildYear, length) {
     super(name, buildYear);
+    this.length = length;
+  }
+  averageStreet(arr) {
+    let streetLengths;
+    let averageLengths;
+
+    streetLengths = arr.map(i => (i.length)).reduce((a, b) => (a + b), 0);
+
+    averageLengths = streetLengths / 4;
+
+    console.log(`Our four streets have a total length of ${streetLengths} Miles and a average of ${averageLengths} Miles`);
+
   }
 }
 
-const Park1 = new Park('Park 1', 1999, 1888, 54);
+const Park1 = new Park('Park 1', 1999, 888, 54);
 const Park2 = new Park('Park 2', 2003, 1002, 66);
 const Park3 = new Park('Park 3', 2010, 967, 62);
 
 let allParks = [Park1, Park2, Park3];
 
-const Street1 = new Streets('Street 1', 1975);
-const Street2 = new Streets('Street 2', 1988);
-const Street3 = new Streets('Street 3', 2000);
-const Street4 = new Streets('Street 4', 2002);
+const Street1 = new Streets('Street 1', 1975, 7);
+const Street2 = new Streets('Street 2', 1988, 5);
+const Street3 = new Streets('Street 3', 2000, 9);
+const Street4 = new Streets('Street 4', 2002, 7);
 
+let allStreets = [Street1, Street2, Street3, Street4];
 
 Park1.calcTreeDensity();
 Park1.calcAverageAge(Park1.buildYear, Park2.buildYear, Park3.buildYear);
 Park1.moreYears(allParks);
+
+Street1.averageStreet(allStreets);
