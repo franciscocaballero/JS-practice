@@ -1525,18 +1525,33 @@ const getRelated = publisher => {
   });
 };
 
-getIDs
-.then(IDs => {
-  console.log(IDs);
-  return getRecipe(IDs[2])
-})
-.then(recipe =>{
-  console.log(recipe);
-  return getRelated("Cisco");
-})
-.then(recipe => {
-  console.log(recipe)
-})
-.catch(error => {
-  console.log("ERROR !!!!!!!! 404")
-}) 
+// getIDs
+// .then(IDs => {
+//   console.log(IDs);
+//   return getRecipe(IDs[2])
+// })
+// .then(recipe =>{
+//   console.log(recipe);
+//   return getRelated("Cisco");
+// })
+// .then(recipe => {
+//   console.log(recipe)
+// })
+// .catch(error => {
+//   console.log("ERROR !!!!!!!! 404")
+// }) 
+
+async function getRecipeAW() {
+    const IDs = await getIDs;
+    console.log(IDs);
+    const recipe = await getRecipe(IDs[2]);
+    console.log(recipe);
+    const related = await getRelated('Francisco Caballero');
+    console.log(related);
+
+    return recipe;
+}
+
+const rec = getRecipeAW();
+console.log(rec)
+getRecipeAW().then(result => console.log(`${result} is the best ever!`));
