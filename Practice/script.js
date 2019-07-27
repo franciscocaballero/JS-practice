@@ -1499,31 +1499,31 @@ The Ternary Operator
 // PROMISES 
 
 
-const getIDs = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve([523, 883, 432, 974]);
-  }, 1500);
-});
+// const getIDs = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve([523, 883, 432, 974]);
+//   }, 1500);
+// });
 
- const getRecipe = recID => {
-  return new Promise((resolve, reject) => {
-      setTimeout(ID => {
-        const recipe = {title: `Fresh tomato pasta`, publisher: 'Cisco'};
-        resolve(`${ID}: ${recipe.title}`);
+//  const getRecipe = recID => {
+//   return new Promise((resolve, reject) => {
+//       setTimeout(ID => {
+//         const recipe = {title: `Fresh tomato pasta`, publisher: 'Cisco'};
+//         resolve(`${ID}: ${recipe.title}`);
 
-      }, 1500, recID)
-  });
- };
+//       }, 1500, recID)
+//   });
+//  };
 
-const getRelated = publisher => {
-  return new Promise((resolve, reject) => {
-    setTimeout(pub => {
-      const recipe = {title: 'Italian Pizza',
-    publisher: 'Cisco'};
-    resolve(`${pub} ${recipe.title}`);
-    }, 1500, publisher);
-  });
-};
+// const getRelated = publisher => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(pub => {
+//       const recipe = {title: 'Italian Pizza',
+//     publisher: 'Cisco'};
+//     resolve(`${pub} ${recipe.title}`);
+//     }, 1500, publisher);
+//   });
+// };
 
 // getIDs
 // .then(IDs => {
@@ -1541,17 +1541,63 @@ const getRelated = publisher => {
 //   console.log("ERROR !!!!!!!! 404")
 // }) 
 
-async function getRecipeAW() {
-    const IDs = await getIDs;
-    console.log(IDs);
-    const recipe = await getRecipe(IDs[2]);
-    console.log(recipe);
-    const related = await getRelated('Francisco Caballero');
-    console.log(related);
+// async function getRecipeAW() {
+//     const IDs = await getIDs;
+//     console.log(IDs);
+//     const recipe = await getRecipe(IDs[2]);
+//     console.log(recipe);
+//     const related = await getRelated('Francisco Caballero');
+//     console.log(related);
 
-    return recipe;
+//     return recipe;
+// }
+
+// const rec = getRecipeAW();
+// console.log(rec)
+// getRecipeAW().then(result => console.log(`${result} is the best ever!`));
+function getWeather(woeid) {
+
+
+  fetch(`http://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`)
+  .then(result => {
+      // console.log(result)
+      return result.json();
+  })
+  .then(data => {
+    // console.log(data);
+    const today = data.consolidated_weather[0];
+    // console.log(`Temps in ${data.title} stay between ${today.min_temp} and ${today.max_temp}.`)
+  })
+  .catch(err => {
+    console.log(err);
+  })
+
 }
 
-const rec = getRecipeAW();
-console.log(rec)
-getRecipeAW().then(result => console.log(`${result} is the best ever!`));
+getWeather(2487956)
+getWeather(44418)
+
+async function getWeatherAW(woeid) {
+try {
+
+  const result = await fetch(`http://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`);
+  const data = await result.json();
+  const tomorrow = data.consolidated_weather[1];
+  console.log(`Temps in ${data.title} stay between ${tomorrow.min_temp} and ${tomorrow.max_temp}.`);
+
+  return data;
+} catch(error) {
+  alert(error);
+}
+}
+
+getWeatherAW(2487956)
+let dataLondon;
+getWeatherAW(44418).then(data => {
+
+  dataLondon = data
+  console.log(dataLondon);
+});
+
+  
+  
