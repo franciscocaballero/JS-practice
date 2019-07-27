@@ -1413,80 +1413,130 @@ The Ternary Operator
 // johnAthlete6.wonMedal();
 // johnAthlete6.calculateAge();
 
-class Park {
-  constructor(name, buildYear, trees, parkArea) {
-    this.name = name;
-    this.buildYear = buildYear;
-    this.trees = trees;
-    this.parkArea = parkArea;
-  }
-  calcTreeDensity() {
-    let treeDesity;
 
-    treeDesity = this.trees / this.parkArea;
 
-    console.log(`Park ${this.name} has a tree Density of ${treeDesity} per square km.`);
-  }
+// PRactice ES6
 
-  calcAverageAge(...ages) {
-    let allAges;
-    let average;
-    allAges = ages.map(cur => (2019 - cur)).reduce((a, b) => (a + b), 0);
-    average = allAges / 3;
-    console.log(`Our parks have an average of ${average} years :D`);
-  }
 
-  moreYears(arr) {
-    for (let i = 0; i < arr.length; i++) {
+// class Park {
+//   constructor(name, buildYear, trees, parkArea) {
+//     this.name = name;
+//     this.buildYear = buildYear;
+//     this.trees = trees;
+//     this.parkArea = parkArea;
+//   }
+//   calcTreeDensity() {
+//     let treeDesity;
 
-      if (arr[i].trees > 1000) {
-        console.log(`${arr[i].name} has the most trees`);
-      }
-    }
-  }
+//     treeDesity = this.trees / this.parkArea;
 
-}
+//     console.log(`Park ${this.name} has a tree Density of ${treeDesity} per square km.`);
+//   }
 
-class Streets extends Park {
-  constructor(name, buildYear, length, size) {
-    super(name, buildYear);
-    this.length = length;
-    this.size = size;
-  }
-  averageStreet(arr) {
-    let streetLengths;
-    let averageLengths;
+//   calcAverageAge(...ages) {
+//     let allAges;
+//     let average;
+//     allAges = ages.map(cur => (2019 - cur)).reduce((a, b) => (a + b), 0);
+//     average = allAges / 3;
+//     console.log(`Our parks have an average of ${average} years :D`);
+//   }
 
-    streetLengths = arr.map(i => (i.length)).reduce((a, b) => (a + b), 0);
+//   moreYears(arr) {
+//     for (let i = 0; i < arr.length; i++) {
 
-    averageLengths = streetLengths / 4;
+//       if (arr[i].trees > 1000) {
+//         console.log(`${arr[i].name} has the most trees`);
+//       }
+//     }
+//   }
 
-    console.log(`Our four streets have a total length of ${streetLengths} Miles and a average of ${averageLengths} Miles`);
-  }
+// }
 
-  streetClass(arr){
-       for (let i = 0; i < arr.length; i++) {
-        console.log(`${arr[i].name} was buit os ${arr[i].buildYear}, is a ${arr[i].size} street`);
-    }
-  }
-}
+// class Streets extends Park {
+//   constructor(name, buildYear, length, size) {
+//     super(name, buildYear);
+//     this.length = length;
+//     this.size = size;
+//   }
+//   averageStreet(arr) {
+//     let streetLengths;
+//     let averageLengths;
 
-const Park1 = new Park('Park 1', 1999, 888, 54);
-const Park2 = new Park('Park 2', 2003, 1002, 66);
-const Park3 = new Park('Park 3', 2010, 967, 62);
+//     streetLengths = arr.map(i => (i.length)).reduce((a, b) => (a + b), 0);
 
-let allParks = [Park1, Park2, Park3];
+//     averageLengths = streetLengths / 4;
 
-const Street1 = new Streets('Street 1', 1975, 7, 'normal');
-const Street2 = new Streets('Street 2', 1988, 5, 'small');
-const Street3 = new Streets('Street 3', 2000, 9, 'big');
-const Street4 = new Streets('Street 4', 2002, 7, 'normal');
+//     console.log(`Our four streets have a total length of ${streetLengths} Miles and a average of ${averageLengths} Miles`);
+//   }
 
-let allStreets = [Street1, Street2, Street3, Street4];
+//   streetClass(arr){
+//        for (let i = 0; i < arr.length; i++) {
+//         console.log(`${arr[i].name} was buit os ${arr[i].buildYear}, is a ${arr[i].size} street`);
+//     }
+//   }
+// }
 
-Park1.calcTreeDensity();
-Park1.calcAverageAge(Park1.buildYear, Park2.buildYear, Park3.buildYear);
-Park1.moreYears(allParks);
+// const Park1 = new Park('Park 1', 1999, 888, 54);
+// const Park2 = new Park('Park 2', 2003, 1002, 66);
+// const Park3 = new Park('Park 3', 2010, 967, 62);
 
-Street1.averageStreet(allStreets);
-Street1.streetClass(allStreets);
+// let allParks = [Park1, Park2, Park3];
+
+// const Street1 = new Streets('Street 1', 1975, 7, 'normal');
+// const Street2 = new Streets('Street 2', 1988, 5, 'small');
+// const Street3 = new Streets('Street 3', 2000, 9, 'big');
+// const Street4 = new Streets('Street 4', 2002, 7, 'normal');
+
+// let allStreets = [Street1, Street2, Street3, Street4];
+
+// Park1.calcTreeDensity();
+// Park1.calcAverageAge(Park1.buildYear, Park2.buildYear, Park3.buildYear);
+// Park1.moreYears(allParks);
+
+// Street1.averageStreet(allStreets);
+// Street1.streetClass(allStreets);
+
+// PROMISES 
+
+
+const getIDs = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve([523, 883, 432, 974]);
+  }, 1500);
+});
+
+ const getRecipe = recID => {
+  return new Promise((resolve, reject) => {
+      setTimeout(ID => {
+        const recipe = {title: `Fresh tomato pasta`, publisher: 'Cisco'};
+        resolve(`${ID}: ${recipe.title}`);
+
+      }, 1500, recID)
+  });
+ };
+
+const getRelated = publisher => {
+  return new Promise((resolve, reject) => {
+    setTimeout(pub => {
+      const recipe = {title: 'Italian Pizza',
+    publisher: 'Cisco'};
+    resolve(`${pub} ${recipe.title}`);
+    }, 1500, publisher);
+  });
+};
+
+getIDs
+.then(IDs => {
+  console.log(IDs);
+  return getRecipe(IDs[2])
+})
+.then(recipe =>{
+  console.log(recipe);
+  return getRelated("Cisco");
+})
+.then(recipe => {
+  console.log(recipe)
+})
+.catch(error => {
+  console.log("ERROR !!!!!!!! 404")
+}) 
